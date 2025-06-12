@@ -1,0 +1,1188 @@
+/* Preloader styles */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0a0a0a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+}
+
+.preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.preloader-circle {
+    width: 150px;
+    height: 150px;
+    border: 10px solid rgba(0, 240, 255, 0.3);
+    border-top: 10px solid rgba(0, 240, 255, 1);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.preloader-inner-circle {
+    width: 120px;
+    height: 120px;
+    border: 5px solid rgba(0, 240, 255, 0.2);
+    border-bottom: 5px solid rgba(0, 240, 255, 0.8);
+    border-radius: 50%;
+    animation: anti-spin 1.2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes anti-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(-360deg); }
+}
+
+
+@font-face {
+    font-family: 'Chopsic';
+    src: url('assets/fonts/chopsic.woff2') format('woff2'),
+         url('assets/fonts/chopsic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Transformer';
+    src: url('assets/fonts/Transformers.woff2') format('woff2'),
+         url('assets/fonts/Transformers.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background:
+        radial-gradient(ellipse at 20% 20%, rgba(50, 100, 20, 0.2) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 30%, rgba(80, 120, 30, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 40% 70%, rgba(60, 110, 25, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse at 60% 10%, rgba(70, 90, 40, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse at 10% 80%, rgba(40, 90, 15, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 90% 90%, rgba(50, 150, 20, 0.07) 0%, transparent 50%),
+        radial-gradient(ellipse at 30% 0%, rgba(70, 100, 20, 0.06) 0%, transparent 50%),
+        #0a0a0a;
+    background-attachment: fixed;
+    color: #ffffff;
+    overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Organic flowing shapes */
+.organic-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden; /* Added to prevent shapes from causing horizontal scroll */
+}
+
+.organic-shape {
+    position: absolute;
+    border: 2px solid rgba(0, 200, 255, 0.3);
+    border-radius: 50% 30% 70% 40%;
+    animation: float ease-in-out infinite;
+}
+
+/* Defining unique properties for each of the 28 shapes */
+.shape-1 {
+    width: 350px; height: 450px; top: 5%; left: 5%; animation-duration: 18s; animation-delay: 0s;
+}
+.shape-2 {
+    width: 300px; height: 400px; top: 20%; right: 8%; animation-duration: 20s; animation-delay: -3s;
+}
+.shape-3 {
+    width: 250px; height: 350px; bottom: 10%; left: 12%; animation-duration: 17s; animation-delay: -6s;
+}
+.shape-4 {
+    width: 280px; height: 380px; top: 35%; right: 20%; animation-duration: 22s; animation-delay: -9s;
+}
+.shape-5 {
+    width: 220px; height: 320px; bottom: 25%; right: 2%; animation-duration: 19s; animation-delay: -12s;
+}
+.shape-6 {
+    width: 320px; height: 420px; top: 50%; left: 3%; animation-duration: 21s; animation-delay: -15s;
+}
+.shape-7 {
+    width: 270px; height: 370px; top: 8%; right: 40%; animation-duration: 16s; animation-delay: -18s;
+}
+.shape-8 {
+    width: 200px; height: 300px; bottom: 30%; right: 35%; animation-duration: 23s; animation-delay: -21s; border-radius: 60% 40% 60% 40%;
+}
+.shape-9 {
+    width: 380px; height: 480px; top: 60%; left: 25%; animation-duration: 20s; animation-delay: -24s; border-radius: 40% 60% 40% 60%;
+}
+.shape-10 {
+    width: 240px; height: 340px; top: 15%; left: 60%; animation-duration: 18s; animation-delay: -27s;
+}
+.shape-11 {
+    width: 290px; height: 390px; bottom: 5%; left: 70%; animation-duration: 21s; animation-delay: -30s;
+}
+.shape-12 {
+    width: 310px; height: 410px; top: 70%; left: 60%; animation-duration: 17s; animation-delay: -33s; border-radius: 70% 30% 50% 50%;
+}
+.shape-13 {
+    width: 260px; height: 360px; top: 15%; left: 45%; animation-duration: 19s; animation-delay: -36s; border-radius: 45% 55% 65% 35%;
+}
+.shape-14 {
+    width: 330px; height: 430px; bottom: 5%; right: 15%; animation-duration: 22s; animation-delay: -39s; border-radius: 35% 65% 45% 55%;
+}
+.shape-15 {
+    width: 210px; height: 310px; top: 70%; left: 10%; animation-duration: 17s; animation-delay: -42s; border-radius: 65% 35% 55% 45%;
+}
+.shape-16 {
+    width: 300px; height: 400px; top: 0%; left: 30%; animation-duration: 20s; animation-delay: -45s; border-radius: 55% 45% 35% 65%;
+}
+.shape-17 {
+    width: 250px; height: 350px; bottom: 20%; left: 40%; animation-duration: 18s; animation-delay: -48s; border-radius: 30% 70% 60% 40%;
+}
+.shape-18 {
+    width: 360px; height: 460px; top: 40%; right: 5%; animation-duration: 24s; animation-delay: -51s; border-radius: 70% 30% 40% 60%;
+}
+.shape-19 {
+    width: 280px; height: 380px; top: 80%; right: 25%; animation-duration: 19s; animation-delay: -54s; border-radius: 50% 50% 70% 30%;
+}
+.shape-20 {
+    width: 230px; height: 330px; top: 25%; left: 70%; animation-duration: 21s; animation-delay: -57s; border-radius: 40% 60% 50% 50%;
+}
+.shape-21 {
+    width: 200px; height: 300px; top: 50%; left: 48%; animation-duration: 23s; animation-delay: -60s; border-radius: 60% 40% 70% 30%;
+}
+.shape-22 {
+    width: 310px; height: 410px; top: 10%; right: 25%; animation-duration: 20s; animation-delay: -63s; border-radius: 30% 70% 40% 60%;
+}
+.shape-23 {
+    width: 270px; height: 370px; bottom: 5%; left: 30%; animation-duration: 18s; animation-delay: -66s; border-radius: 50% 50% 20% 80%;
+}
+.shape-24 {
+    width: 340px; height: 440px; top: 30%; left: 15%; animation-duration: 25s; animation-delay: -69s; border-radius: 80% 20% 50% 50%;
+}
+.shape-25 {
+    width: 220px; height: 320px; bottom: 10%; left: 55%; animation-duration: 21s; animation-delay: -72s; border-radius: 25% 75% 65% 35%;
+}
+.shape-26 {
+    width: 300px; height: 400px; top: 75%; right: 10%; animation-duration: 19s; animation-delay: -75s; border-radius: 75% 25% 35% 65%;
+}
+.shape-27 {
+    width: 250px; height: 350px; top: 0%; right: 50%; animation-duration: 22s; animation-delay: -78s; border-radius: 40% 60% 80% 20%;
+}
+.shape-28 {
+    width: 290px; height: 390px; top: 60%; left: 5%; animation-duration: 20s; animation-delay: -81s; border-radius: 60% 40% 20% 80%;
+}
+
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg) scale(1);
+        border-radius: 50% 30% 70% 40%;
+    }
+    10% {
+        transform: translateY(-20px) rotate(4deg) scale(1.01);
+        border-radius: 40% 60% 30% 70%;
+    }
+    20% {
+        transform: translateY(-15px) rotate(-2deg) scale(0.99);
+        border-radius: 60% 40% 80% 20%;
+    }
+    30% {
+        transform: translateY(-25px) rotate(6deg) scale(1.02);
+        border-radius: 30% 70% 50% 50%;
+    }
+    40% {
+        transform: translateY(-18px) rotate(-5deg) scale(0.98);
+        border-radius: 70% 30% 40% 60%;
+    }
+    50% {
+        transform: translateY(-30px) rotate(8deg) scale(1.015);
+        border-radius: 25% 75% 45% 55%;
+    }
+    60% {
+        transform: translateY(-22px) rotate(-3deg) scale(0.99);
+        border-radius: 55% 45% 75% 25%;
+    }
+    70% {
+        transform: translateY(-32px) rotate(7deg) scale(1.005);
+        border-radius: 40% 60% 60% 40%;
+    }
+    80% {
+        transform: translateY(-26px) rotate(-6deg) scale(0.995);
+        border-radius: 70% 30% 30% 70%;
+    }
+    90% {
+        transform: translateY(-35px) rotate(9deg) scale(1.01);
+        border-radius: 20% 80% 60% 40%;
+    }
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    max-width: 900px;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.08), 0 0 40px rgba(0, 240, 255, 0.03);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    overflow: hidden;
+    transition: top 0.3s ease-in-out;
+}
+
+.nav-container {
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+}
+
+.logo {
+    height: 90px;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 150%;
+    vertical-align: middle;
+    filter: drop-shadow(0 0 10px rgba(212, 255, 16, 0.5));
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 1.2px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    white-space: nowrap;
+    font-family: 'Chopsic', sans-serif;
+}
+
+.nav-links a:hover {
+    color: #d4ff10;
+    text-shadow: 0 0 15px rgba(212, 255, 16, 0.8);
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown::after {
+    content: '▼';
+    margin-left: 5px;
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Main content area */
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    overflow: hidden; /* Important for mobile to prevent horizontal scroll */
+}
+
+/* Left side text */
+.side-text-left {
+    position: absolute;
+    left: 100px; /* Changed from 40px to 80px */
+    top: 75%; /* Changed from 50% to 55% */
+    transform: translateY(-50%) rotate(-90deg);
+    color: #ffffff;
+    font-size: 1.2rem;
+    letter-spacing: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden; /* Changed from clip to hidden for better consistency */
+    width: 400px;
+    border-right: 0.15em solid orange;
+    animation: blink-caret .75s step-end infinite;
+    font-family: 'Transformer', sans-serif;
+    transform-origin: left center; /* Added for correct rotation origin */
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+}
+
+.side-text-left.typed {
+    border-right: none;
+    animation: none;
+}
+
+/* Right side text (BOT X) */
+.side-text-right {
+    position: absolute;
+    right: 100px; /* Changed from 40px to 80px */
+    top: 75%; /* Changed from 50% to 55% */
+    transform: translateY(-50%) rotate(90deg);
+    color: #ffffff;
+    font-size: 4.5rem;
+    font-weight: bold;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    font-family: 'Chopsic', sans-serif;
+    animation: pulseGlowText 2s ease-in-out infinite alternate;
+    transform-origin: right center; /* Added for correct rotation origin */
+}
+
+@keyframes pulseGlowText {
+    0%, 100% {
+        text-shadow: 0 0 10px rgba(0, 240, 255, 0.8),
+                     0 0 20px rgba(0, 240, 255, 0.6),
+                     0 0 30px rgba(0, 240, 255, 0.4);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(0, 240, 255, 1),
+                     0 0 40px rgba(0, 240, 255, 0.8),
+                     0 0 60px rgba(0, 240, 255, 0.6);
+    }
+}
+
+/* Central robot figure container */
+.robot-container {
+    position: absolute;
+    left: 50%;
+    top: 65%; /* Changed from 65% to 50% for better vertical centering on PC */
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 6;
+}
+
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 25px rgba(0, 240, 255, 0.4), 0 0 60px rgba(0, 240, 255, 0.2);
+    }
+    100% {
+        box-shadow: 0 0 50px rgba(0, 240, 255, 0.7), 0 0 100px rgba(0, 240, 255, 0.3);
+    }
+}
+
+/* Robot figure (the div containing the image) */
+.robot-figure {
+    width: 100%;
+    height: 100%;
+    filter:
+        drop-shadow(0 0 30px rgba(0, 240, 255, 0.4))
+        drop-shadow(0 0 60px rgba(0, 240, 255, 0.2))
+        brightness(1.1)
+        contrast(1.2);
+    animation: robotFloat 4s ease-in-out infinite;
+}
+
+/* Robot image (the actual img tag) */
+.robot-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+@keyframes robotFloat {
+    0%, 100% {
+        transform: translateY(0px) scale(1);
+        filter:
+            drop-shadow(0 0 30px rgba(0, 240, 255, 0.4))
+            drop-shadow(0 0 60px rgba(0, 240, 255, 0.2))
+            brightness(1.1)
+            contrast(1.2);
+    }
+    50% {
+        transform: translateY(-10px) scale(1.02);
+        filter:
+            drop-shadow(0 0 40px rgba(0, 240, 255, 0.6))
+            drop-shadow(0 0 80px rgba(0, 240, 255, 0.3))
+            brightness(1.15)
+            contrast(1.3);
+    }
+}
+
+/* Rotating Image from main.html style tag */
+.rotating-image {
+    width: 400px; /* Adjust as needed */
+    height: 400px; /* Adjust as needed */
+    position: absolute; /* Changed to absolute to position relative to main-content */
+    left: 50%; /* Center horizontally */
+    top: 50%; /* Center vertically */
+    transform: translate(-50%, -50%); /* Adjust for true center */
+    display: block;
+    animation: rotate 3s linear infinite;
+    z-index: 2;
+}
+
+@keyframes rotate {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg); /* Maintain center during rotation */
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg); /* Maintain center during rotation */
+    }
+}
+
+
+/* Section Divider */
+.section-divider {
+    width: 80%;
+    margin: 80px auto;
+    border: none;
+    border-top: 2px solid rgba(0, 240, 255, 0.6);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.8);
+    z-index: 2;
+    position: relative;
+}
+
+/* Social media icons */
+.social-icons {
+    position: fixed;
+    bottom: 40px;
+    left: 40px;
+    display: flex;
+    gap: 15px;
+    z-index: 100;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    border-color: #00f0ff;
+    color: #00f0ff;
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+}
+
+/* Buttons at the bottom of the page */
+.bottom-buttons-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    padding: 100px 5%;
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    justify-content: center;
+    align-items: start;
+}
+
+.bottom-buttons-container.show-buttons {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.feature-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 240, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    padding-bottom: 56.25%;
+    height: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.feature-item:first-child {
+    background-image: url('assets/images/multi_language.jpg');
+}
+
+.feature-item:nth-child(2) {
+    background-image: url('assets/images/intelligent_visuals.jpg');
+}
+.feature-item:nth-child(3) {
+    background-image: url('assets/images/high_res_exports.jpg');
+}
+.feature-item:nth-child(4) {
+    background-image: url('assets/images/easy_to_use.jpg');
+}
+.feature-item:nth-child(5) {
+    background-image: url('assets/images/dreamscape.jpg');
+}
+
+.feature-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7) saturate(0.9);
+    transition: filter 0.3s ease, transform 0.3s ease;
+    z-index: 1;
+}
+
+.feature-item:hover img {
+    transform: scale(1.05);
+    filter: brightness(1) saturate(1.1);
+}
+
+.feature-item-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0));
+    color: #ffffff;
+    text-align: left;
+    transition: transform 0.3s ease;
+    z-index: 2;
+}
+
+.feature-item:hover .feature-item-content {
+    transform: translateY(-10px);
+}
+
+.feature-item-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+}
+
+.feature-item-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.8);
+}
+/* නව text element එකේ default තත්වය (desktop එකේ සැඟවී ඇත) */
+.mobile-only-text {
+    display: none;
+}
+
+/* Mobile Menu Button styles (hidden by default on desktop) */
+.menu-toggle {
+    display: none; /* Hidden on desktop */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px; /* 3 bars of 3px height with 6px spacing */
+    cursor: pointer;
+    z-index: 1001; /* Above nav links */
+    position: absolute; /* Changed to absolute to position within navbar */
+    right: 20px; /* Position to the right within the navbar */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for true vertical center */
+}
+
+.menu-toggle .bar {
+    width: 100%;
+    height: 3px;
+    background-color: #00f0ff; /* Changed to blue neon */
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 8px rgba(0, 240, 255, 0.7); /* Added neon glow */
+}
+
+/* Animation for menu toggle (X icon) */
+.menu-toggle.is-active .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.menu-toggle.is-active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.is-active .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* NEW FANTACY COMMUNITY SECTION STYLES */
+.fantacy-community-section {
+    background: #000000;
+    padding: 60px 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 80px; /* Space from buttons above */
+    border-top: 1px solid rgba(0, 10, 10, 0.1);
+    border-bottom: 1px solid rgba(0, 8, 8, 0.1);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.05);
+}
+
+.fantacy-community-section .community-logo-left,
+.fantacy-community-section .community-logo-right {
+    height: 120px; /* Adjust logo size */
+    opacity: 0.2; /* Make them subtle background elements */
+    filter: drop-shadow(0 0 5px rgba(212, 255, 16, 0.5));
+}
+
+.fantacy-community-section .community-content {
+    text-align: center;
+    z-index: 2;
+}
+
+.fantacy-community-section h2 {
+    font-family: 'Chopsic', sans-serif;
+    font-size: 2.8rem;
+    color: #ffffff;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+}
+
+.fantacy-community-section .highlight {
+    color: #0ed3d3; /* Yellow highlight color */
+    text-shadow: 0 0 20px rgba(7, 33, 121, 0.8);
+}
+
+.discord-button {
+    display: inline-block;
+    background: linear-gradient(45deg, #7289DA, #5865F2); /* Discord colors */
+    color: #ffffff;
+    padding: 15px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(114, 137, 218, 0.4);
+    font-family: 'Arial', sans-serif; /* Use a standard font for button */
+}
+
+.discord-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(114, 137, 218, 0.6);
+    filter: brightness(1.1);
+}
+
+/* NEW FOOTER STYLES */
+.site-footer {
+    background: #0a0a0a;
+    color: #ffffff;
+    padding: 60px 5%;
+    border-top: 2px solid rgba(0, 240, 255, 0.2);
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
+    z-index: 5;
+    position: relative;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 280px;
+    margin-bottom: 30px;
+}
+
+.footer-heading {
+    font-family: 'Chopsic', sans-serif;
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    letter-spacing: 1px;
+}
+
+.footer-heading .red-bar {
+    width: 6px;
+    height: 30px;
+    background-color: #2bc3f1; /* Yellow bar to match theme */
+    margin-right: 15px;
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba(16, 199, 255, 0.8);
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.8);
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li:hover {
+    color: #00f0ff; /* Neon blue on hover */
+}
+
+.footer-column ul li i {
+    margin-right: 12px;
+    color: #00f0ff; /* Neon blue icons */
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.footer-column ul li:hover i {
+    transform: translateX(5px);
+}
+
+.footer-column ul li a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #00f0ff;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 30px;
+    margin-top: 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.copyright {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-social-icon {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%; /* Make them circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.footer-social-icon:hover {
+    border-color: #14eff7; /* Yellow glow on hover */
+    color: #10e3ff;
+    box-shadow: 0 0 15px rgba(212, 255, 16, 0.5);
+    transform: translateY(-3px);
+}
+
+/* Responsive design adjustments for Mobile */
+@media (max-width: 768px) {
+    .navbar {
+        width: 90%; /* Wider navbar for mobile */
+        padding: 0.5rem 1rem;
+        height: 60px; /* Slightly taller navbar */
+        top: 10px; /* Move navbar slightly up */
+        overflow: visible; /* Allow content to spill for dropdown */
+    }
+
+    .nav-container {
+        justify-content: space-between;
+    }
+
+    .logo {
+        height: 70px; /* Adjust logo height for mobile */
+    }
+
+    .logo img {
+        height: 100%; /* Make logo fill container */
+        width: auto;
+    }
+
+    .nav-links {
+        display: none; /* Hidden by default on mobile */
+        flex-direction: column;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.9); /* Darker background for menu */
+        position: absolute;
+        top: 60px; /* Below the navbar */
+        left: 0;
+        padding: 20px 0;
+        border-radius: 0 0 15px 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+        opacity: 0;
+        transform: translateY(-20px);
+        pointer-events: none;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .nav-links.active {
+        display: flex; /* Show when active */
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: all;
+    }
+
+    .nav-links li {
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .nav-links a {
+        padding: 10px 0;
+        display: block;
+        font-size: 1.1rem; /* Slightly larger font for mobile links */
+    }
+
+    .menu-toggle {
+        display: flex; /* Show on mobile */
+    }
+
+    .main-content {
+        flex-direction: column; /* Stack elements vertically */
+        justify-content: flex-start; /* Align items to the top for better spacing */
+        height: auto; /* Allow content to dictate height */
+        min-height: 100vh; /* Ensure it still takes full viewport height if content is short */
+        padding-top: 80px; /* Add padding to prevent content from going under navbar */
+        padding-bottom: 50px; /* Add padding at the bottom */
+    }
+
+    .side-text-left {
+        position: relative; /* Change to relative for normal flow */
+        transform: none; /* Remove rotation and translation */
+        width: 100%; /* Take full width */
+        text-align: center; /* Center text */
+        font-size: 1rem; /* Smaller font size */
+        margin-top: 20px; /* Add some space from the top */
+        left: auto; /* Remove fixed left position */
+        top: auto; /* Remove fixed top position */
+        white-space: normal; /* Allow text to wrap */
+        border-right: none; /* Remove typing animation border for simplicity or re-implement differently */
+        padding: 0 20px; /* Add padding to text */
+    }
+
+    .side-text-left.typed {
+        border-right: none; /* Ensure no border */
+        animation: none; /* No blink caret */
+    }
+
+
+    /* Adjust typing animation to be more suitable for horizontal text */
+    @keyframes blink-caret-mobile {
+        from, to { border-color: transparent }
+        50% { border-color: orange; }
+    }
+
+    .side-text-left:not(.typed) {
+        border-right: 0.15em solid orange;
+        animation: blink-caret-mobile .75s step-end infinite;
+    }
+
+
+    .side-text-right {
+        position: relative; /* Change to relative for normal flow */
+        transform: none; /* Remove rotation and translation */
+        width: 100%; /* Take full width */
+        text-align: center; /* Center text */
+        font-size: 3rem; /* Smaller font size for BOT X */
+        margin-top: 30px; /* Add space below "Creat By Janith Dimuthu" */
+        right: auto; /* Remove fixed right position */
+        top: auto; /* Remove fixed top position */
+    }
+
+    .robot-container {
+        position: relative; /* Change to relative */
+        transform: none; /* Remove original translation */
+        width: 80%; /* Make robot smaller relative to screen size */
+        height: auto; /* Auto height to maintain aspect ratio */
+        margin: 50px auto; /* Center with margin and add vertical space */
+        top: auto; /* Remove fixed top position */
+        left: auto; /* Remove fixed left position */
+    }
+
+    .robot-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .rotating-image {
+        position: relative; /* Change to relative */
+        transform: none; /* Remove fixed positioning */
+        width: 70%; /* Make smaller */
+        height: auto; /* Auto height */
+        margin: -100px auto 0 auto; /* Adjust margin to overlap robot slightly */
+        left: auto; /* Remove fixed left */
+        top: auto; /* Remove fixed top */
+    }
+
+    @keyframes rotate {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+
+    .bottom-buttons-container {
+        grid-template-columns: 1fr; /* Single column on small screens */
+        gap: 20px;
+        padding: 50px 15px; /* Adjust padding for smaller screens */
+    }
+    .feature-item-title {
+        font-size: 1.4rem;
+    }
+    .feature-item-description {
+        font-size: 0.8rem;
+    }
+
+    .social-icons {
+        bottom: 20px;
+        left: 20px;
+        gap: 10px;
+    }
+
+    .mobile-only-text {
+        display: block; /* mobile එකේදී පමණක් පෙන්වීමට */
+        width: 90%; /* තිරයේ බොහෝ කොටසක් ආවරණය කිරීමට */
+        margin: 80px auto 20px auto; /* මැදට තැබීමට සහ උස අතට ඉඩ ලබා දීමට, bottom margin අඩු කර ඇත */
+        padding: 0 10px; /* Remove background, keep padding for text */
+        /* background: rgba(0, 0, 0, 0.5); /* REMOVED: කියවීමට පහසු වන පරිදි තරමක් තද පසුබිමක් */
+        border-radius: 10px;
+        font-size: 0.9rem;
+        line-height: 1.6;
+        text-align: center; /* text එක මැදට කිරීමට */
+        color: #ffffff;
+        box-shadow: none; /* REMOVED: Remove background shadow */
+        z-index: 5; /* organic shapes වලට ඉහළින් නමුත් robot/navbar වලට පහළින් තැබීමට */
+        font-family: 'Transformer', sans-serif; /* Apply Transformer font */
+        overflow: hidden; /* For typing effect */
+        border-right: 0.15em solid orange; /* Typing cursor */
+        white-space: normal; /* Allow text to wrap */
+    }
+
+    .mobile-only-text.typed {
+        border-right: none; /* Remove cursor when typing is done */
+        animation: none; /* Stop blink caret */
+    }
+
+    /* Adjust typing animation for mobile text */
+    @keyframes blink-caret-mobile-text {
+        from, to { border-color: transparent }
+        50% { border-color: orange; }
+    }
+
+    .mobile-only-text:not(.typed) {
+        animation: blink-caret-mobile-text .75s step-end infinite;
+    }
+
+    /* NEW FANTACY COMMUNITY SECTION RESPONSIVE */
+    .fantacy-community-section {
+        flex-direction: column;
+        gap: 30px;
+        padding: 40px 5%;
+    }
+
+    .fantacy-community-section h2 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .fantacy-community-section .community-logo-left,
+    .fantacy-community-section .community-logo-right {
+        height: 80px; /* Smaller logos on mobile */
+    }
+
+    /* NEW FOOTER RESPONSIVE */
+    .site-footer {
+        padding: 40px 5%;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-column {
+        min-width: unset; /* Remove min-width on small screens */
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .footer-heading {
+        justify-content: center; /* Center heading and bar */
+        margin-bottom: 15px;
+    }
+
+    .footer-heading .red-bar {
+        width: 4px;
+        height: 25px;
+        margin-right: 10px;
+    }
+
+    .footer-column ul li {
+        justify-content: center; /* Center list items */
+        margin-bottom: 10px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 30px;
+        padding-top: 20px;
+    }
+
+    .footer-social-icons {
+        gap: 15px;
+    }
+}
+
+/* For even smaller screens (e.g., iPhone SE) */
+@media (max-width: 480px) {
+    .navbar {
+        width: 95%;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .logo img {
+        height: 220%;
+    }
+
+    .side-text-left {
+       font-size: 0.9rem;
+        padding: 0 10px;
+        margin-top: 6px; /* Adjust for even smaller screens */
+    }
+
+    .side-text-right {
+        font-size: 2.5rem;
+        margin-top: -400px; /* Adjust for even smaller screens */
+
+    }
+
+    .robot-container {
+        width: 100%;
+        margin: 150px auto;
+    }
+
+    .rotating-image {
+        width: 80%;
+        margin: -600px auto 0 auto;
+    }
+
+    .bottom-buttons-container {
+        padding: 40px 10px;
+    }
+
+    .feature-item-title {
+        font-size: 1.2rem;
+    }
+    .feature-item-description {
+        font-size: 0.75rem;
+    }
+
+    .social-icons {
+        bottom: 10px;
+        left: 10px;
+        gap: 8px;
+    }
+
+
+    .mobile-only-text {
+        font-size: 0.8rem; /* කුඩා තිර සඳහා font size එක කුඩා කිරීමට */
+        padding: 15px;
+        margin: 50px auto 20px auto; /* Adjust margin for smaller screens */
+    }
+
+    /* NEW FANTACY COMMUNITY SECTION SMALL MOBILE */
+    .fantacy-community-section h2 {
+        font-size: 1.6rem;
+    }
+
+    /* NEW FOOTER SMALL MOBILE */
+    .footer-column {
+        font-size: 0.9rem;
+    }
+
+    .footer-heading {
+        font-size: 1.4rem;
+    }
+
+    .footer-column ul li {
+        font-size: 0.85rem;
+    }
+
+    .copyright {
+        font-size: 0.75rem;
+    }
+}
